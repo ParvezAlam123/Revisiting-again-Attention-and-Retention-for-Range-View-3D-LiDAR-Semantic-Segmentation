@@ -1,16 +1,6 @@
 <div align="center">
-<h1>Revisiting Retentive Networks for Fast Range-View 3D LiDAR Semantic Segmentation</h1>
-
-[**Simone Mosco**](https://simom0.github.io/), [**Daniel Fusaro**](https://bender97.github.io/), [**Wanmeng Li**](https://lichonger2.github.io/),
-[**Alberto Pretto**](https://albertopretto.altervista.org/)
-
-University of Padova
-
-**WACV 2026**
-
-<a href="https://openaccess.thecvf.com/content/WACV2026/papers/Mosco_Revisiting_Retentive_Networks_for_Fast_Range-View_3D_LiDAR_Semantic_Segmentation_WACV_2026_paper.pdf"><img src="https://img.shields.io/badge/arXiv-Paper-red?logo=arxiv" alt="Paper PDF"></a>
-<a href='https://huggingface.co/Simom0/RangeRet'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-blue' alt="HF Model"></a>
-<a href="https://www.youtube.com/watch?v=U68NkOMENNI"><img src="https://img.shields.io/badge/YouTube-Video-red?logo=youtube" alt="YouTube Video"></a>
+<h1>Revisiting again Attention and Retention for Range View 3D LiDAR Semantic
+Segmentation</h1>
 
 <img
   src="https://github.com/ParvezAlam123/Revisiting-again-Attention-and-Retention-for-Range-View-3D-LiDAR-Semantic-Segmentation/blob/main/Network.png"
