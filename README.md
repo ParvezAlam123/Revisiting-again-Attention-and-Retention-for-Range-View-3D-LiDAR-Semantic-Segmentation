@@ -26,10 +26,7 @@ we conduct the real time experiments using data acquired from a physical LiDAR s
 feasibility fo the proposed architecture for real robotic perception. Experimental results demonstrates the effectiveness of
 RangeARNet across benchmark evaluation and real-time sensor deployment for efficient LiDAR semantic segmentation.
 
-## News
-- **2026-02-25**: Code and models are released.
-- **2026-02-21**: Our paper [LIDO](https://simom0.github.io/lido-page/) on 3D LiDAR Anomaly Segmentation is accepted to CVPR 2026.
-- **2025-09-05**: RangeRet is accepted to WACV 2026.
+
 
 ## Installation
 
@@ -93,38 +90,10 @@ python infer.py --dataset /path/to/semanticposs/ --data ./config/labels/semantic
 ```
 
 
-## Model Zoo
 
-Pretrained models are available on [Hugging Face](https://huggingface.co/Simom0/RangeRet).
-
-| Name | Dataset | Val mIoU (%) | Test mIoU (%) | Checkpoints |
-|---|---|---|---|---|
-| rangeret-kitti-657 | SemanticKITTI | 65.7 | 64.5 | [Download](https://huggingface.co/Simom0/RangeRet/resolve/main/rangeret-kitti-657.pt) |
-| rangeret-panda-600 | PandaSet | 66.7 | 60.0 | [Download](https://huggingface.co/Simom0/RangeRet/resolve/main/rangeret-panda-600.pt) |
-| rangeret-poss-528 | SemanticPOSS | - | 52.8 | [Download](https://huggingface.co/Simom0/RangeRet/resolve/main/rangeret-poss-528.pt) | 
-
-## Checklist
-
-- [x] Update README
-- [x] Release code
-- [x] Upload models
-- [ ] Custom data guidelines
-
-## Citation
-
-If you find our work useful please cite our paper:
-
-```
-@inproceedings{mosco2026revisiting,
-  title={Revisiting Retentive Networks for Fast Range-View 3D LiDAR Semantic Segmentation},
-  author={Mosco, Simone and Fusaro, Daniel and Li, Wanmeng and Pretto, Alberto},
-  booktitle={Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision},
-  pages={2499--2509},
-  year={2026}
-}
 ```
 
 
 ## Acknowledgment
 
-Thanks to these great repositories: [RangeNet++](https://github.com/PRBonn/lidar-bonnetal), [Torchscale](https://github.com/microsoft/torchscale), [RMT](https://github.com/qhfan/RMT), [RangeViT](https://github.com/valeoai/rangevit), [Rangeview-rgb-lidar-fusion](https://github.com/nschi00/rangeview-rgb-lidar-fusion)
+Thanks to these great repositories: https://github.com/SiMoM0/RangeRet
