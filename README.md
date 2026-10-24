@@ -7,12 +7,7 @@ Segmentation</h1>
   alt="teaser"
   width="800"
 /> 
-## semanticKITTI prediction Result
-<img
-  src="https://github.com/ParvezAlam123/Revisiting-again-Attention-and-Retention-for-Range-View-3D-LiDAR-Semantic-Segmentation/blob/main/semantic_kitti_test.gif"
-  alt="teaser"
-  width="800"
-/> 
+
 
 </div>
 
@@ -31,6 +26,14 @@ We got 59.3 % mIoU on SemanticKITTI test set and 53.06 % mIoU on SemanticPOSS te
 we conduct the real time experiments using data acquired from a physical LiDAR sensor to investigate the practical
 feasibility fo the proposed architecture for real robotic perception. Experimental results demonstrates the effectiveness of
 RangeARNet across benchmark evaluation and real-time sensor deployment for efficient LiDAR semantic segmentation.
+
+
+## semanticKITTI prediction Result
+<img
+  src="https://github.com/ParvezAlam123/Revisiting-again-Attention-and-Retention-for-Range-View-3D-LiDAR-Semantic-Segmentation/blob/main/semantic_kitti_test.gif"
+  alt="teaser"
+  width="800"
+/> 
 
 
 
