@@ -111,4 +111,4 @@ python infer.py --dataset /path/to/semanticposs/ --data ./config/labels/semantic
 
 ## Acknowledgment
 
-Thanks to these great repositories: https://github.com/SiMoM0/RangeRet
+Thanks to these great repository: https://github.com/SiMoM0/RangeRet
