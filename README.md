@@ -20,7 +20,21 @@ University of Padova
 
 </div>
 
-**RangeRet** is a lightweight LiDAR semantic segmentation approach that adapts Retentive Networks to range images using a Circular Retention (CiR) mechanism to efficiently model spatial continuty properties of range-view representation. RangeRet obtains SOTA results among range-view approaches on PandaSet and SemanticPOSS, and competitive results on SemanticKITTI, while achieving real-time performance. 
+ LiDAR semantic segmentation is an important task for autonomous driving and robotics, enabling the detailed
+understanding or surrounding environments for safe and reliable decision making. Range view representations provide the
+computational efficiency by projecting 3D point cloud into 2D range images, making them suitable for real time perception.
+However effectively capturing local geometric structures and long range contextual dependencies remains challenging,
+under the computational constraints of real robotic systems. To address these challenges, we propose learnable weights
+guided an Attention-Retention fusion block making RangeARNet point cloud segmentation network. The proposed method
+integrates attention based feature modeling with retention based sequence processing to capture the complimentary
+spatial and contextual information while maintaining the computational constraints. By exploiting the strength of both
+mechanisms the segmentation network aims to improve feature representation and semantic discrimination across
+diverse LiDAR scene structures. We evaluate the proposed approach on two public benchmarks, SemanticKITTI and
+SemanticPOSS datasets, to assess its segmentation performance and generalization across different environments.
+We got 59.3 % mIoU on SemanticKITTI test set and 53.06 % mIoU on SemanticPOSS test dataset. Furthermore
+we conduct the real time experiments using data acquired from a physical LiDAR sensor to investigate the practical
+feasibility fo the proposed architecture for real robotic perception. Experimental results demonstrates the effectiveness of
+RangeARNet across benchmark evaluation and real-time sensor deployment for efficient LiDAR semantic segmentation.
 
 ## News
 - **2026-02-25**: Code and models are released.
