@@ -13,7 +13,7 @@ University of Padova
 <a href="https://www.youtube.com/watch?v=U68NkOMENNI"><img src="https://img.shields.io/badge/YouTube-Video-red?logo=youtube" alt="YouTube Video"></a>
 
 <img
-  src="./assets/method.png"
+  src="https://github.com/ParvezAlam123/Revisiting-again-Attention-and-Retention-for-Range-View-3D-LiDAR-Semantic-Segmentation/blob/main/Network.png"
   alt="teaser"
   width="800"
 />
