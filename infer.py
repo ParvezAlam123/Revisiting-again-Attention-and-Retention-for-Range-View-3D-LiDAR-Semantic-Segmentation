@@ -58,7 +58,7 @@ if __name__ == '__main__':
 	parser.add_argument(
         '--save',
         action='store_true',
-		default=False,
+		default=True,
         help='Save predictions in the log directory. Default: False',
     )
 	parser.add_argument(

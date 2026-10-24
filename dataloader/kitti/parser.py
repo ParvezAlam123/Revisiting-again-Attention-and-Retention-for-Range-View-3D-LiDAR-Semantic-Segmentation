@@ -91,7 +91,7 @@ class SemanticKitti(Dataset):
 
       # get paths for each
       scan_path = os.path.join(self.root, seq, "velodyne")
-      label_path = os.path.join(self.root, seq, "labels")
+      label_path = os.path.join("/data/common_datasets/ai21resch01005/SementicKitti/data_odometry_labels/dataset/sequences", seq, "labels")
 
       # get files
       scan_files = [os.path.join(dp, f) for dp, dn, fn in os.walk(

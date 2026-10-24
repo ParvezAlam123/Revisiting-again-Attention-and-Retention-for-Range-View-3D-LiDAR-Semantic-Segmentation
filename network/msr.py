@@ -2,7 +2,8 @@
 
 import math
 import torch
-from torch import nn
+from torch import nn 
+import torch.nn.functional as F  
 
 def rotate_every_two(x):
     x1 = x[:, :, :, ::2]
@@ -39,7 +40,11 @@ class MultiScaleRetention(nn.Module):
         #self.group_norm = nn.GroupNorm(self.heads, self.v_dim)
         self.group_norm = RMSNorm(self.head_size, eps=1e-5, elementwise_affine=False)
 
-        self.reset_parameters()
+        self.reset_parameters() 
+
+        self.attention = nn.TransformerEncoderLayer(d_model=self.hidden_size, nhead=self.heads, batch_first=True) 
+
+        self.gate = nn.Linear(self.hidden_size, self.hidden_size, bias=False) 
 
     def reset_parameters(self):
         nn.init.xavier_uniform_(self.q_proj.weight, gain=2 ** -2.5)
@@ -85,7 +90,9 @@ class MultiScaleRetention(nn.Module):
 
     def forward(self, x, rel_pos, incremental_state=None):
         bsz, seq_len, _ = x.size()
-        (sin, cos), inner_mask = rel_pos
+        (sin, cos), inner_mask = rel_pos 
+
+        gate_values = F.sigmoid(self.gate(x)) 
 
         q = self.q_proj(x)
         k = self.k_proj(x)
@@ -109,9 +116,11 @@ class MultiScaleRetention(nn.Module):
 
         # output = self.swish(g) * output
 
-        output = self.out_proj(output)
+        output = self.out_proj(output) 
 
-        return output
+        output = gate_values * self.attention(x) + (1 - gate_values) * output 
+
+        return output 
 
 class RMSNorm(nn.Module):
     def __init__(self, dim: int, eps: float = 1e-6, elementwise_affine=True):

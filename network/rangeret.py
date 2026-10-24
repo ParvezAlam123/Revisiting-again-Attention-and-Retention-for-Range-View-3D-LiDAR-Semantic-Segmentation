@@ -252,7 +252,9 @@ class RangeRet(nn.Module):
 
         residual = x
         
-        x = self.viembed(x)
+        x = self.viembed(x)  
+
+        print("x = ", x.shape) 
 
         x = self.backbone(x)
 

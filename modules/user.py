@@ -6,7 +6,10 @@ import torch
 import torch.nn as nn
 import torch.backends.cuda as cudnn
 import torch.nn.functional as F
-import numpy as np
+import numpy as np 
+
+from torchinfo import summary 
+import time 
 
 from utils.avgmeter import AverageMeter
 from utils.ioueval import iouEval
@@ -57,8 +60,9 @@ class User():
         
         # load model
         with torch.no_grad():
-            self.model = RangeRet(self.ARCH['model_params'], self.parser.get_resolution(), self.parser.get_n_classes())
+            self.model = RangeRet(self.ARCH['model_params'], self.parser.get_resolution(), self.parser.get_n_classes()) 
 
+            print(summary(self.model, input_size=(1, 5, 40, 2048))) 
         try:
             #load model
             self.model.load_state_dict(torch.load(self.modeldir), strict=True)
@@ -145,8 +149,12 @@ class User():
                         proj_range = proj_range.cuda()
                         unproj_range = unproj_range.cuda()
 
-                with torch.cuda.amp.autocast(enabled=self.fp16):
-                    proj_output = self.model(proj_in)
+
+      
+                with torch.cuda.amp.autocast(enabled=self.fp16): 
+                    start_time = time.time() 
+                    proj_output = self.model(proj_in) 
+                    print("time = ", time.time() - start_time)
                     predictions = proj_output.permute(0, 3, 1, 2)
                     proj_argmax = predictions[0].argmax(dim=0)
 
@@ -198,16 +206,16 @@ class User():
                     i=i, class_str=self.parser.get_xentropy_class_string(i), jacc=jacc))
     
             # print for spreadsheet
-            # print("*" * 80)
-            # print("below can be copied straight for paper table")
-            # for i, jacc in enumerate(class_jaccard):
-            #     if i not in [0]:
-            #         sys.stdout.write('{jacc:.3f}'.format(jacc=jacc.item()))
-            #         sys.stdout.write(",")
-            # sys.stdout.write('{jacc:.3f}'.format(jacc=jaccard.item()))
-            # sys.stdout.write(",")
-            # sys.stdout.write('{acc:.3f}'.format(acc=accuracy.item()))
-            # sys.stdout.write('\n')
-            # sys.stdout.flush()
+            print("*" * 80)
+            print("below can be copied straight for paper table")
+            for i, jacc in enumerate(class_jaccard):
+                 if i not in [0]:
+                     sys.stdout.write('{jacc:.3f}'.format(jacc=jacc.item()))
+                     sys.stdout.write(",")
+            sys.stdout.write('{jacc:.3f}'.format(jacc=jaccard.item()))
+            sys.stdout.write(",")
+            sys.stdout.write('{acc:.3f}'.format(acc=accuracy.item()))
+            sys.stdout.write('\n')
+            sys.stdout.flush()
 
             return accuracy, jaccard

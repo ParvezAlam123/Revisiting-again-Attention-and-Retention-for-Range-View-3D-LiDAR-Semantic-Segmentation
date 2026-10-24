@@ -69,14 +69,14 @@ dataset:
 ###################
 ## Train params
 train:
-  epochs: 64 # default 64
-  learning_rate: 1.0e-2 # 1.0e-2 for SGD | 1.0e-4 for AdamW
+  epochs: 100 # default 64
+  learning_rate: 1.0e-4 # 1.0e-2 for SGD | 1.0e-4 for AdamW
   weight_decay: 0.05
   optimizer: AdamW  # [SGD, AdamW]
   batch_size: 8   # batch size (default rangeret 8)
   workers: 4     # number of threads to get data
   epsilon_w: 0.001       # class weight w = 1 / (content + epsilon_w)
-  range_aug: False       # range image augmentations
+  range_aug: True       # range image augmentations
   
   scheduler:
     name: "WarmupCosine"  # [OneCycle, WarmupCosine]
@@ -86,4 +86,6 @@ train:
     pct_start: 0.02 # The percentage of the cycle (in number of steps) spent increasing the learning rate (warmup).
 
   report_epoch: 1 # report every epoch
-  show_scans: False # show scans during training
+  show_scans: False # show scans during training 
+
+  
