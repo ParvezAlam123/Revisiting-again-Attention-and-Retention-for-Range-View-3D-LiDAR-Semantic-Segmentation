@@ -42,11 +42,11 @@ RangeARNet across benchmark evaluation and real-time sensor deployment for effic
    width="900"
 /> 
 
-## Real Time Experi,ent on VLP 16 LiDAR 
+## Real Time Experiment on VLP 16 LiDAR (Failure case)
 <img
    src = "https://github.com/ParvezAlam123/Revisiting-again-Attention-and-Retention-for-Range-View-3D-LiDAR-Semantic-Segmentation/blob/main/real_vlp16-gif.gif"
    alt = "teaser"
-   width="900"
+   width="600"
 /> 
 
 
